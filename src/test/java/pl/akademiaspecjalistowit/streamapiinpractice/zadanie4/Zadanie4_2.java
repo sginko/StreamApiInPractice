@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 public class Zadanie4_2 {
 
     /**
+     * ZACZNIJ OD NAPISANIA ASERCJI!
+     *
      * Masz listę obiektów Order, gdzie każdy Order zawiera listę produktów oraz status zamówienia
      * (np. "NOWE", "WYSŁANE", "DOSTARCZONE"). Każdy produkt ma nazwę i cenę.
      * <p>

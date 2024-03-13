@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 public class Zadanie3 {
 
     /**
+     * ZACZNIJ OD NAPISANIA ASERCJI!
+     *
      * Mając listę pracowników (obiekty z polami name i salary), znajdź pierwszych
      * 5 pracowników z najwyższą pensją i zwróć ich imiona w posortowanej liście alfabetycznie.
      */

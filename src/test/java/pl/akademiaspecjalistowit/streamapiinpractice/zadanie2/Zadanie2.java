@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Test;
 public class Zadanie2 {
 
     /**
+     *
+     * ZACZNIJ OD NAPISANIA ASERCJI!
+     *
      * twórz funkcję, która przyjmuje listę słów i zwraca mapę,
      * gdzie kluczem jest długość słowa, a wartością ilość słów o tej długości.
      */

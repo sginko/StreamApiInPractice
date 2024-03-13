@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 public class Zadanie5 {
 
     /**
+     * ZACZNIJ OD NAPISANIA ASERCJI!
+     *
      * Masz listę produktów, gdzie każdy produkt zawiera nazwę, cenę oraz kategorię
      * (np. "Elektronika", "Dom", "Ogród").
      * <p>
