@@ -10,9 +10,7 @@ public class Zadanie1 {
     void filteringAndSumming(){
         List<Integer> numbers = Arrays.asList(12, 3, 45, 19, 8, 15, 4, 27, 20);
 
-        int sum = numbers.stream()
-            .filter(n -> n > 10 && n % 2 == 0)
-            .reduce(0, Integer::sum);
+        int sum = 0;
 
         System.out.println("Suma parzystych liczb większych od 10: " + sum);
 

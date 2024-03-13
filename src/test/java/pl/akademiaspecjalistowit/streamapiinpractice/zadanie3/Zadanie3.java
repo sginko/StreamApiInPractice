@@ -22,13 +22,7 @@ public class Zadanie3 {
             new Employee("Michael Brown", 50000)
         );
 
-        List<String> topEarners = employees.stream()
-            .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
-            .limit(5)
-            .map(Employee::getName)
-            .sorted()
-            .collect(Collectors.toList());
-
+        List<String> topEarners = null;
         System.out.println("Top zarabiający pracownicy: " + topEarners);
 
     }

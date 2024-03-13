@@ -9,7 +9,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 
-public class FlatmapDemo {
+
+/**
+ * Mając listę zamówień, znajdź najczęściej występującą nazwę produktu
+ */
+public class Zadanie4_1 {
 
 
     @Test
@@ -28,18 +32,6 @@ public class FlatmapDemo {
         );
 
 
-    }
-
-    public static Map<String, Long> findMaxFrequencyChar(String input) {
-
-        Map<String, Long> frequencyMap = Stream.of(input.split(""))
-            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-         return frequencyMap.entrySet()
-            .stream()
-            .max(Map.Entry.comparingByValue())
-            .map(entry -> Collections.singletonMap(entry.getKey(), entry.getValue()))
-            .orElse(Collections.emptyMap());
     }
 
 

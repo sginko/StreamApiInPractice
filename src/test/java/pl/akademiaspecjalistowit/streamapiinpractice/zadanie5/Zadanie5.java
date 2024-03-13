@@ -32,15 +32,7 @@ public class Zadanie5 {
             new Product("Kamera", 150.0, "Elektronika")
         );
 
-        Map<String, List<String>> productsGroupedByCategory =
-            products.stream()
-                .filter(product -> product.getPrice() > 100)
-                .map(product ->
-                    new Product(product.getName().toUpperCase(),
-                        product.getPrice(),
-                        product.getCategory()))
-                .collect(Collectors.groupingBy(Product::getCategory,
-                    Collectors.mapping(Product::getName, Collectors.toList())));
+        Map<String, List<String>> productsGroupedByCategory = null;
 
 //        System.out.println("Produkty pogrupowane według kategorii: " + productsGroupedByCategory);
 

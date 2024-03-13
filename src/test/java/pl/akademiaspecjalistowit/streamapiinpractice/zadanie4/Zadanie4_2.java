@@ -3,7 +3,7 @@ package pl.akademiaspecjalistowit.streamapiinpractice.zadanie4;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class Zadanie4 {
+public class Zadanie4_2 {
 
     /**
      * Masz listę obiektów Order, gdzie każdy Order zawiera listę produktów oraz status zamówienia
@@ -28,25 +28,6 @@ public class Zadanie4 {
             new Order(List.of(new Product("Etui", 344.15), new Product("Buty", 961.36)), "DOSTARCZONE")
         );
 
-        double totalValueOfNewOrders = orders.stream()
-            .filter(order -> "NOWE".equals(order.getStatus()))
-            .map(Order::getProducts)
-            .flatMap(List::stream)
-            .map(Product::getPrice)
-            .reduce(0.0, Double::sum);
-
-//        System.out.println("Łączna wartość nowych zamówień: " + totalValueOfNewOrders);
-
-
-        double qeee = orders.stream()
-            .filter(order -> "NOWE".equals(order.getStatus()))
-            .peek(e -> System.out.println("po filtrowaniu " + e))
-            .map(Order::getProducts)
-            .peek(e -> System.out.println("po mapowaniu produktu " + e))
-            .flatMap(List::stream)
-            .map(Product::getPrice)
-            .peek(e -> System.out.println("po mapowaniu ceny" + e))
-            .reduce(0.0, Double::sum);
 
     }
 }

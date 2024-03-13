@@ -16,8 +16,7 @@ public class Zadanie2 {
     void grouping(){
         List<String> words = Arrays.asList("apple", "banana", "cherry", "date", "fig", "grape");
 
-        Map<Integer, Long> wordCount = words.stream()
-            .collect(Collectors.groupingBy(String::length, Collectors.counting()));
+        Map<Integer, Long> wordCount = null;
 
         System.out.println("Mapa długości słów do ich ilości: " + wordCount);
 
