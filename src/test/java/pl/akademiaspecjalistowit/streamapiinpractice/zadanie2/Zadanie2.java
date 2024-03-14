@@ -3,7 +3,6 @@ package pl.akademiaspecjalistowit.streamapiinpractice.zadanie2;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 public class Zadanie2 {
