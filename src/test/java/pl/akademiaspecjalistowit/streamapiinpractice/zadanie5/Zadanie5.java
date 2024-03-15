@@ -43,6 +43,9 @@ public class Zadanie5 {
 
         //then
         assertThat(productsGroupedByCategory.size()).isEqualTo(3);
+        assertThat(productsGroupedByCategory.get("Elektronika")).containsExactly("TELEFON", "LAPTOP", "KAMERA");
+        assertThat(productsGroupedByCategory.get("Ogród")).containsExactly("KOSIARKA", "GRILL", "ZESTAW NARZĘDZI");
+        assertThat(productsGroupedByCategory.get("Dom")).containsExactly("FOTEL");
     }
 
     private static Map<String, List<String>> getProductsGroupedByCategory(List<Product> products) {

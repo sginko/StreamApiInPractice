@@ -22,12 +22,12 @@ public class Zadanie6 {
         // when
         double result = calculateAverage(numbers);
 
-        // then
+         //then
         assertEquals(3.0, result, 0.0001);
     }
 
     private double calculateAverage(List<Integer> numbers) {
-        return 0;
+        return 0.0;
     }
 
     // Zadanie 2: Wybierz wszystkie liczby parzyste z danej listy.

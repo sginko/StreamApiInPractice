@@ -46,21 +46,22 @@ public class Zadanie4_1 {
     }
 
     private static List<String> getCountProduct(List<Order> orders) {
-        return orders.stream()
-                .flatMap(k->k.getProducts().stream())
-                .collect(Collectors.groupingBy(Product::getName, Collectors.counting()))
-                .entrySet().stream()
-                .filter(e->e.getValue() == getMaxCount(orders))
-                .map(k->k.getKey())
+        Map<String, Long> ordersMap = ordersToMap(orders);
+        return ordersMap.entrySet().stream()
+                .filter(e -> e.getValue().equals(getMaxCount(ordersMap)))
+                .map(k -> k.getKey())
                 .collect(Collectors.toList());
     }
 
-    private static long getMaxCount(List<Order> orders) {
-        return orders.stream()
-                .flatMap(order -> order.getProducts().stream())
-                .collect(Collectors.groupingBy(Product::getName, Collectors.counting()))
-                .values().stream()
+    private static long getMaxCount(Map<String, Long> ordersMap) {
+        return ordersMap.values().stream()
                 .max(Long::compareTo)
                 .orElse(0L);
+    }
+
+    private static Map<String, Long> ordersToMap(List<Order> orders) {
+        return orders.stream()
+                .flatMap(order -> order.getProducts().stream())
+                .collect(Collectors.groupingBy(Product::getName, Collectors.counting()));
     }
 }
