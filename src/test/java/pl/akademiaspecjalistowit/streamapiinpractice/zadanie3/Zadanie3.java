@@ -36,9 +36,11 @@ public class Zadanie3 {
 
     private List<String> groupEmployee(List<Employee> employees) {
         return employees.stream()
-                .sorted(Comparator.comparing((Employee e) -> e.getSalary()).reversed().thenComparing(e -> e.getName()))
+//                .sorted(Comparator.comparing((Employee e) -> e.getSalary()).reversed().thenComparing(e -> e.getName()))
+                .sorted(Comparator.comparingDouble((Employee employee) -> employee.getSalary()).reversed())
                 .limit(5)
                 .map(e -> e.getName())
+                .sorted()
                 .collect(Collectors.toList());
     }
 }
