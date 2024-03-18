@@ -48,8 +48,8 @@ public class Zadanie4_1 {
     private static List<String> getCountProduct(List<Order> orders) {
         Map<String, Long> ordersMap = ordersToMap(orders);
         return ordersMap.entrySet().stream()
-                .filter(e -> e.getValue().equals(getMaxCount(ordersMap)))
-                .map(k -> k.getKey())
+                .filter(entry -> entry.getValue().equals(getMaxCount(ordersMap)))
+                .map(entry -> entry.getKey())
                 .collect(Collectors.toList());
     }
 
