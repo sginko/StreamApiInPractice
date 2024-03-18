@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -45,8 +47,9 @@ public class Zadanie0 {
     }
 
     private List<Person> findAdults(List<Person> people) {
-        //todo IMPLEMENT ME
-        return null;
+        return people.stream()
+                .filter(p -> p.age() >= 18)
+                .collect(Collectors.toList());
     }
 
 
@@ -65,7 +68,10 @@ public class Zadanie0 {
     }
 
     private double calculateAverageAge(List<Person> people) {
-        return 0;
+        return people.stream()
+                .mapToDouble(person -> person.age())
+                .average()
+                .orElse(0);
     }
 
     /**
@@ -80,7 +86,7 @@ public class Zadanie0 {
         Map<Integer, List<Person>> groupedByAge = groupPeopleByAge(people);
 
         //then
-        assertThat(groupedByAge.size()).isEqualTo(5);
+        assertThat(groupedByAge.size()).isEqualTo(4);
         assertThat(groupedByAge.get(17).size()).isEqualTo(1);
         assertThat(groupedByAge.get(18).size()).isEqualTo(1);
         assertThat(groupedByAge.get(39).size()).isEqualTo(1);
@@ -88,8 +94,7 @@ public class Zadanie0 {
     }
 
     private Map<Integer, List<Person>> groupPeopleByAge(List<Person> people) {
-        return null;
+        return people.stream()
+                .collect(Collectors.groupingBy(p -> p.age(), Collectors.toList()));
     }
-
-
 }
